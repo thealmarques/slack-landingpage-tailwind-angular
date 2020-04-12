@@ -1,0 +1,98 @@
+.bg-slack-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url("../assets/images/poster.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-position: center;
+}
+
+.play-btn {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 45%;
+  left: 45%;
+  background-image: url("../assets/images/play.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.translucent {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close-modal {
+  color: white;
+  &:hover {
+    color: black;
+    background-color: gray;
+    opacity: 2;
+    .icon-close {
+      width: 16px;
+      height: 16px;
+      background-image: url("../assets/images/close.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .icon-close {
+    width: 16px;
+    height: 16px;
+    background-image: url("../assets/images/white_close.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.shapes-icon {
+  width: 52px;
+  height: 44px;
+}
+
+.screen-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.claps-icon {
+  width: 55px;
+  height: 50px;
+}
+
+.underline-action {
+  width: max-content;
+  color: #1264a3;
+  display: inline-block;
+  text-decoration: none;
+
+  p:after {
+    content: "";
+    float: right;
+    vertical-align: middle;
+    background-color: transparent;
+    background-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/images/blue-arrow.png");
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #1264a3;
+    transition: width .3s;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}

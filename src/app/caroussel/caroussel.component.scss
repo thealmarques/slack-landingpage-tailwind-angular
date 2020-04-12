@@ -1,0 +1,105 @@
+.carousel-image {
+  width: 280px;
+  height: 340px;
+}
+
+.carousel {
+  transform-style: preserve-3d;
+}
+
+.card {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 70%;
+  margin: auto;
+  z-index: 100;
+  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.initial,
+.active {
+  opacity: 1;
+  z-index: 900;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Using plain CSS */
+@media (max-width: 1084px) {
+  .initial,
+  .active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card.prev,
+.card.next {
+  z-index: 800;
+}
+
+.card.prev {
+  transform: translateX(-100%);
+}
+
+.card.next {
+  transform: translateX(100%);
+}
+
+.button-prev,
+.button-next {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 54%;
+    border-right: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+}
+
+.button-next:after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.button-prev {
+  left: 100px;
+}
+
+.button-next {
+  right: 100px;
+}
+
+#read-more:after {
+  content: "";
+  float: right;
+  background-color: transparent;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+  margin-top: 2px;
+  background-image: url("../../assets/images/blue-arrow.png");
+}

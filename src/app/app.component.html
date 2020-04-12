@@ -1,0 +1,208 @@
+<div class="bg-white flex-1" [ngClass]="{'opacity-25 overflow-y-hidden': showYoutubePlayer}">
+  <app-header></app-header>
+  <div class="relative">
+    <div class="flex flex-col justify-start h-screen">
+      <div class="bg-slack-image invisible sm:visible">
+      </div>
+      <video class="visible sm:invisible" preload= "true" autoplay = "autoplay" loop = "loop" muted>
+        <source src="https://a.slack-edge.com/085e3/marketing/img/homepage/video/brand-campaign_hero-video.mp4"
+          type="video/mp4" />
+      </video>
+      <div class="absolute z-10 flex flex-col inset-0 mx-16 my-32">
+        <span class="text-5xl font-bold max-w-40rem">O Slack substitui o e-mail dentro da sua empresa</span>
+        <span class="text-lg max-w-32rem">Organize suas conversas com o Slack, a alternativa inteligente ao
+          e-mail.
+        </span>
+        <div class="flex mt-4 flex-row flex-wrap justify-start items-center max-w-32rem">
+          <button class="w-48 mr-2 mt-2 h-12 bg-button rounded text-white">
+            TESTE O SLACK
+          </button>
+          <button class="w-64 h-12 mt-2 rounded border font-bold border-button text-button">
+            CONFIRA A DEMONSTRAÇÃO
+          </button>
+        </div>
+        <span class="text-sm mt-4">
+          Já está usando o Slack? <a class="underline text-blue-600" href="https://slack.com/signin">Entre</a>.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-start px-8">
+    <span class="font-bold text-5xl sm:mt-16 text-center">Pense fora da caixa de entrada</span>
+    <span class="mt-2 text-lg text-center">
+      Trabalhar em canais permite que todos na sua equipe possam visualizar o progresso e o objetivo de maneira
+      compartilhada.
+    </span>
+    <div class="max-w-870px mt-8 relative">
+      <video (click)="modalToggle()" class="shadow-dropdown cursor-pointer" preload= "true" autoplay = "autoplay" loop = "loop" muted>
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+          type="video/mp4">
+      </video>
+      <span (click)="modalToggle()" class="play-btn cursor-pointer"></span>
+    </div>
+    <div class="mt-8 pb-16 border-b border-gray-400 w-full flex flex-row flex-wrap justify justify-between">
+      <div class="flex mt-8 flex-col max-w-22rem">
+        <img class="shapes-icon" src="../assets/images/shapes.png" alt="Shapes">
+        <span class="mt-4 font-bold">Conversas Organizadas</span>
+        <span class="mt-4">Em vez de uma única caixa de entrada lotada, as conversas no Slack acontecem em espaços
+          dedicados chamados "canais".
+        </span>
+      </div>
+      <div class="flex mt-8 flex-col max-w-22rem">
+        <img class="shapes-icon" src="../assets/images/screen.png" alt="Screen">
+        <span class="mt-4 font-bold">Fique por dentro de tudo</span>
+        <span class="mt-4">Com o Slack é simples acompanhar conversas ou encontrar informações importantes em um arquivo
+          facilmente pesquisável.
+        </span>
+      </div>
+      <div class="flex mt-8 flex-col max-w-22rem">
+        <img class="screen-icon" src="../assets/images/claps.png" alt="Claps">
+        <span class="mt-4 font-bold">Dê uma chance à concentração</span>
+        <span class="mt-4">Ao contrário do e-mail, o Slack permite escolher quais conversas são mais importantes e quais
+          você pode ver depois.
+        </span>
+      </div>
+    </div>
+    <div class="w-full px-16 flex flex-row flex-wrap mt-16 items-center justify-between">
+      <div class="flex flex-col max-w-32rem">
+        <span class="text-4xl font-bold">Migre para os canais</span>
+        <span class="mt-4 text-lg">O trabalho em equipe produtivo acontece nos canais: espaços organizados para tudo
+          relacionado a um
+          projeto, um assunto ou uma equipe.</span>
+        <span class="mt-4 sm:mb-8 cursor-pointer underline-action text-lg">
+          <p>Saiba mais sobre os canais</p>
+        </span>
+      </div>
+      <div class="max-w-32rem">
+        <video preload= "true" autoplay = "autoplay" loop = "loop" muted
+          poster="https://a.slack-edge.com/d6bad/marketing/img/features/channels/video/inline-1/channels-inline1.pt-BR.jpg">
+          <source
+            src="https://a.slack-edge.com/d6bad/marketing/img/features/channels/video/inline-1/channels-inline1.pt-BR.mp4"
+            type="video/mp4">
+          <source
+            src="https://a.slack-edge.com/1ebb1/marketing/img/features/channels/video/inline-1/channels-inline1.pt-BR.webm"
+            type="video/webm">
+        </video>
+      </div>
+    </div>
+    <div class="w-full px-16 flex flex-row flex-wrap mt-16 items-center justify-between">
+      <div class="max-w-32rem">
+        <video preload= "true" autoplay = "autoplay" loop = "loop" muted
+          poster="https://a.slack-edge.com/d6bad/marketing/img/features/channels/video/inline-1/channels-inline1.pt-BR.jpg">
+          <source
+            src="https://a.slack-edge.com/d6bad/marketing/img/features/shared-channels/videos/inline-3/shared-channels-inline3.pt-BR.mp4"
+            type="video/mp4">
+          <source
+            src="https://a.slack-edge.com/d6bad/marketing/img/features/shared-channels/videos/inline-3/shared-channels-inline3.pt-BR.webm"
+            type="video/webm">
+        </video>
+      </div>
+      <div class="flex flex-col max-w-32rem">
+        <span class="text-4xl font-bold">Os canais compartilhados unem as empresas</span>
+        <span class="mt-4 text-lg">O trabalho em equipe produtivo acontece nos canais: espaços organizados para tudo
+          relacionado a um
+          projeto, um assunto ou uma equipe.</span>
+        <span class="mt-4 cursor-pointer sm:mb-8 know-more text-lg">
+          <p>Saiba mais sobre os canais</p>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="bg-slack-gray flex flex-col items-center justify-center">
+    <span class="font-bold text-3xl mt-16">Usado em todo o mundo</span>
+    <span class="mt-4 p-8 text-center">Equipes de todos os tipos já transformaram o Slack no lugar onde o trabalho acontece.</span>
+    <app-caroussel class="mt-12 px-10"></app-caroussel>
+    <div class="flex flex-row flex-wrap px-32 py-16 justify-between items-center w-full">
+      <img class="w-24 h-8 m-2" src="https://a.slack-edge.com/80588/marketing/img/logos/company/_color/airbnb-logo.png" alt="">
+      <img class="w-6 h-6 m-2" src="https://a.slack-edge.com/80588/marketing/img/logos/company/electronic-arts-logo.png" alt="">
+      <img class="w-32 h-8 m-2" src="https://a.slack-edge.com/80588/marketing/img/logos/company/_color/ameritrade-logo.png" alt="">
+      <img class="w-24 h-6 m-2" src="https://a.slack-edge.com/80588/marketing/img/logos/company/_color/oracle-logo.png" alt="">
+      <img class="w-6 h-6 m-2" src="https://a.slack-edge.com/80588/marketing/img/logos/company/_color/target-logo.png" alt="">
+      <img class="w-32 h-6 m-2" src="https://a.slack-edge.com/80588/marketing/img/logos/company/_color/autodesk-logo.png" alt="">
+    </div>
+  </div>
+  <div class="bg-button w-full flex flex-col items-center justify-center p-16">
+    <span class="text-white font-bold text-3xl">
+      Escolha um jeito melhor de trabalhar
+    </span>
+    <div class="flex flex-row mt-8 w-3/6 items-center justify-center flex-wrap">
+      <button class="m-2 rounded h-12 w-40 bg-white text-button font-bold">Teste o Slack</button>
+      <button class="m-2 rounded h-12 w-64 bg-button text-white font-bold border-2 border-white">Fale com a equipe de vendas</button>
+    </div>
+  </div>
+  <div class="flex flex-row bg-white items-start justify-between w-full mt-8 p-12">
+    <div class="flex w-1/5">
+      <img class="w-32 h-12" src="../assets/images/slack.png" alt="">
+    </div>
+    <div class="w-3/5 flex flex-row flex-wrap justify-between items-center">
+      <div class="flex flex-col h-full">
+        <p class="text-sm m-2 font-bold">PRODUTO</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+      </div>
+      <div class="flex flex-col h-full">
+        <p class="text-sm m-2 font-bold">PRODUTO</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+      </div>
+      <div class="flex flex-col h-full">
+        <p class="text-sm m-2 font-bold">PRODUTO</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+      </div>
+      <div class="flex flex-col h-full">
+        <p class="text-sm m-2 font-bold">PRODUTO</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+      </div>
+      <div class="flex flex-col h-full">
+        <p class="text-sm m-2 font-bold">PRODUTO</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+        <p class="text-sm m-2 text-gray-600">Recursos</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showYoutubePlayer" class="fixed z-50 inset-0 w-full h-full translucent">
+  <div class="mt-16 flex w-full h-full flex-row items-start justify-center">
+    <iframe width="85%" allowfullscreen="1" frameborder="0" height="85%"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
+    <button (click)="modalToggle()"
+      class="mx-4 flex flex-col items-center justify-center self-start bg-black opacity-25 rounded-full h-16 w-16 close-modal">
+      <span class="icon-close"></span>
+      <span class="text-xs">Close</span>
+    </button>
+  </div>
+</div>

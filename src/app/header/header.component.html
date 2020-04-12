@@ -1,0 +1,147 @@
+<div *ngIf="!sideMenu || width > 1084" class="h-10 fixed inset-0 z-50 bg-white flex w-full items-center justify-between px-10 py-10">
+    <div class="w-3/4 flex items-center justify-start">
+        <img class="h-10 w-26" src="../../assets/images/slack.png" alt="Slack">
+        <ul class="list-none mx-10 overflow-hidden flex flex-row sm:hidden">
+            <li class="float-left text-sm cursor-pointer p-4 why-slack-trigger">
+                <span>Por que o Slack?</span>
+                <ul class="absolute mt-2 shadow-dropdown bg-white px-4 py-2 why-slack-target">
+                    <li class="p-2 hover:underline hover:text-blue-500">Recursos</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Como ele substitui o e-mail</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Segurança</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Clientes</li>
+                </ul>
+            </li>
+            <li class="float-left text-sm cursor-pointer p-4 solutions-trigger">
+                <span>Soluções</span>
+                <ul class="absolute mt-2 shadow-dropdown bg-white px-4 py-2 solutions-target">
+                    <li class="p-2 hover:underline hover:text-blue-500">Trabalho Remoto</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Engenharia</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Serviços Financeiros</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Vendas</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">TI</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Marketing</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Suporte ao cliente</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Recursos Humanos</li>
+                </ul>
+            </li>
+            <li class="float-left text-sm cursor-pointer p-4 resources-trigger">
+                <span>Recursos</span>
+                <ul class="flex flex-col absolute mt-2 px-4 py-2 bg-white shadow-dropdown resources-target">
+                    <li>
+                        <button class="p-2 text-left hover:bg-gray-200">
+                            Biblioteca de recursos
+                        </button>
+                        <ul class="absolute flex flex-col bg-white px-4 py-2">
+                            <li class="p-2 hover:underline hover:text-blue-500">Página inicial da biblioteca</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Por que usar o Slack?</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Noções básicas do Slack</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Como usar o Slack</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Slack para administradores</li>
+                        </ul>
+                    </li>
+                    <li class="library-trigger">
+                        <button class="p-2 text-left hover:bg-gray-200">
+                            Blog
+                        </button>
+                        <ul class="absolute flex flex-col bg-white px-4 py-2">
+                            <li class="p-2 hover:underline hover:text-blue-500">Página inicial do blog</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Colaboração</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Produtividade</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">Transformação</li>
+                            <li class="p-2 hover:underline hover:text-blue-500">@Slack</li>
+                        </ul>
+                    </li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Central de ajuda</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">API</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Diretório de apps</li>
+                    <li class="p-2 hover:underline hover:text-blue-500">Baixar</li>
+                </ul>
+            </li>
+            <li class="float-left text-sm cursor-pointer p-4">
+                <span class="hover:underline hover:text-blue-500">Empresas</span>
+            </li>
+            <li class="float-left text-sm cursor-pointer p-4 pricing-trigger">
+                <span class="hover:underline hover:text-blue-500">Preços</span>
+            </li>
+        </ul>
+    </div>
+    <div class="w-1/4 sm:w-0 flex items-center justify-start sm:invisible">
+        <span class="hover:underline hover:text-blue-500 cursor-pointer">Entrar</span>
+        <button class="ml-4 bg-button w-2/4 h-10 rounded text-white">Primeiros Passos</button>
+    </div>
+    <div class="sm:w-1/4 w-0 flex items-center justify-end invisible sm:visible">
+        <span class="hamburguerIcon cursor-pointer" (click)="sideMenu = !sideMenu"></span>
+    </div>
+</div>
+
+<div [@showSideMenu]="sideMenu" class="invisible sm:visible bg-white fixed z-20 px-10 w-full h-full">
+    <div class="flex flex-col w-full h-full">
+        <div class="flex justify-between items-center h-10 w-full py-10">
+            <img class="h-10 w-26" src="../../assets/images/slack.png" alt="Slack">
+            <span class="closeIcon cursor-pointer" (click)="sideMenu=!sideMenu"></span>
+        </div>
+        <perfect-scrollbar class="w-full p-2 max-h-70p">
+            <ul class="mt-8 w-full menu">
+                <li (active)="activeSubMenu === 1" class="p-2 cursor-pointer inactive mr-2"
+                    [ngClass]="{'bg-slack-gray rounded active': activeSubMenu === 1}"
+                    (click)="activeSubMenu === 1 ? activeSubMenu = 0 : activeSubMenu = 1">
+                    <span class="text-lg text-lg w-full">
+                        Por que o Slack
+                    </span>
+                </li>
+                <ul *ngIf="activeSubMenu === 1" class="p-2 mt-2 mb-4 flex flex-col">
+                    <li class="p-2 hover:underline hover:text-blue-500 cursor-pointer">Recursos</li>
+                    <li class="p-2 hover:underline hover:text-blue-500 cursor-pointer">Como ele substitui o e-mail</li>
+                    <li class="p-2 hover:underline hover:text-blue-500 cursor-pointer">Segurança</li>
+                    <li class="p-2 hover:underline hover:text-blue-500 cursor-pointer">Clientes</li>
+                </ul>
+                <li (active)="activeSubMenu === 2" class="p-2 cursor-pointer inactive mr-2"
+                    [ngClass]="{'bg-slack-gray rounded active': activeSubMenu === 2}"
+                    (click)="activeSubMenu === 2 ? activeSubMenu = 0 : activeSubMenu = 2">
+                    <span class="text-lg text-lg w-full">
+                        Soluções
+                    </span>
+                </li>
+                <ul *ngIf="activeSubMenu === 2" class="p-2 mt-2 mb-4 flex flex-col">
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Trabalho Remoto</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Engenharia</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Serviços financeiros</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Vendas</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">TI</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Marketing</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Suporte ao cliente</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Recursos humanos</li>
+                </ul>
+                <li (active)="activeSubMenu === 3" class="p-2 cursor-pointer inactive mr-2"
+                    [ngClass]="{'bg-slack-gray rounded active': activeSubMenu === 3}"
+                    (click)="activeSubMenu === 3 ? activeSubMenu = 0 : activeSubMenu = 3">
+                    <span class="text-lg text-lg w-full">
+                        Recursos
+                    </span>
+                </li>
+                <ul *ngIf="activeSubMenu === 3" class="p-2 mt-2 mb-4 flex-col">
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Biblioteca de recursos</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Blog</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Central de ajuda</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">API</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Diretório de apps</li>
+                    <li class="cursor-pointer p-2 hover:underline hover:text-blue-500">Baixar</li>
+                </ul>
+                <li class="cursor-pointer p-2 text-lg hover:underline hover:text-blue-500">
+                    Empresas
+                </li>
+                <li class="cursor-pointer p-2 text-lg hover:underline hover:text-blue-500">
+                    Preços
+                </li>
+            </ul>
+        </perfect-scrollbar>
+        <div class="w-full flex flex-1 pb-4">
+            <button class="w-1/2 h-12 self-end mr-2 border border-button text-button">
+                ENTRAR
+            </button>
+            <button class="ml-2 w-1/2 h-12 bg-button rounded self-end text-white">
+                BAIXAR O SLACK
+            </button>
+        </div>
+    </div>
+</div>

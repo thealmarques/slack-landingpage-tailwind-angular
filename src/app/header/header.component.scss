@@ -1,0 +1,119 @@
+.resources-trigger,
+.why-slack-trigger,
+.solutions-trigger {
+  .resources-target,
+  .why-slack-target,
+  .solutions-target {
+    visibility: hidden;
+    min-width: 240px;
+    z-index: 11;
+  }
+
+  &:hover {
+    .why-slack-target,
+    .solutions-target {
+      visibility: visible;
+    }
+
+    .resources-target {
+      visibility: visible;
+
+      li:nth-child(-n + 2) {
+        transition: min-width .2s cubic-bezier(.165,.84,.44,1);
+        min-width: 220px;
+
+        button {
+          width: 220px;
+
+          &:after {
+            content: "";
+            float: right;
+            background-color: transparent;
+            background-size: 12px;
+            margin-top: 5px;
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 12px;
+            background-image: url("../../assets/images/arrow-right.png");
+          }
+        }
+
+        ul {
+          visibility: hidden;
+          top: 0;
+          width: 230px;
+        }
+
+        &:hover {
+          min-width: 470px;
+          ul {
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 5%;
+              width: 1px;
+              height: 105%;
+              background-color: #ebeaeb;
+            }
+
+            visibility: visible;
+            transform: translateX(230px);
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hamburguerIcon {
+  background-image: url("../../assets/images/hamburguer.png");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.closeIcon {
+  background-image: url("../../assets/images/close.png");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.menu {
+  .inactive {
+    span {
+      &:after {
+        content: "";
+        float: right;
+        background-color: transparent;
+        background-size: 18px;
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        margin-top: 5px;
+        background-image: url("../../assets/images/arrow-right.png");
+      }
+    }
+  }
+
+  .active {
+    span {
+      &:after {
+        content: "";
+        float: right;
+        background-color: transparent;
+        background-size: 18px;
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        margin-top: 5px;
+        background-image: url("../../assets/images/arrow-right.png");
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

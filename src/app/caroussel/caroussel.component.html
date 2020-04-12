@@ -1,0 +1,98 @@
+<div (panmove)="onPan($event)" (panend)="onPanEnd($event)" (swipeleft)="onSwipe(idx, $event.type)" (swiperight)="onSwipe(idx, $event.type)" class="flex flex-row overflow-hidden items-center justify-center">
+    <div class="relative carousel flex items-center w-full sm:w-380px shadow-dropdown cursor-pointer">
+        <div class="card active sm:w-280px">
+            <img class="carousel-image"
+                src="https://a.slack-edge.com/80588/marketing/img/stories/intuit/slack-customer-intuit.jpg" alt="">
+            <div class="flex flex-col justify-start items-start bg-white h-340px sm:h-auto p-8">
+                <img src="https://a.slack-edge.com/80588/marketing/img/stories/intuit/intuit.png" alt="">
+                <span class="mt-4 pr-12 select-none italic">
+                    "Nossas equipes dizem que estão trabalhando juntas e resolvendo problemas de modo muito mais rápido
+                    porque, embora elas estejam espalhadas pelo mundo todo, o Slack as reúne como se estivessem na mesma
+                    sala."
+                </span>
+                <span class="font-bold mt-4 text-sm">
+                    Pam Whitmore
+                </span>
+                <span class="text-sm mt">
+                    Gerente de grupos, TI, Intuit
+                </span>
+                <div class="flex flex-1 self-end sm:self-center sm:mt-8 flex-col-reverse">
+                    <span id="read-more" class="text-sm font-bold text-blue-600">
+                        LER HISTÓRIA
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card sm:w-280px">
+            <img class="carousel-image"
+                src="https://a.slack-edge.com/80588/marketing/img/stories/everlane/slack-customer-everlane.jpg" alt="">
+            <div class="flex flex-col justify-start items-start bg-white h-340px sm:h-auto p-8">
+                <img src="https://a.slack-edge.com/80588/marketing/img/stories/everlane/everlane.png" alt="">
+                <span class="mt-4 pr-12 select-none italic">
+                    "Ter canais compartilhados significa que a instalação é muito mais fácil, especialmente para nossos fornecedores se já estiverem no Slack. Com certeza vamos transferir nossas relações pré-existentes para o Slack."
+                </span>
+                <span class="font-bold mt-4 text-sm">
+                    Brian Alenduff
+                </span>
+                <span class="text-sm mt">
+                    Gerente de Produto digital, Everlane
+                </span>
+                <div class="flex flex-1 self-end sm:self-center sm:mt-8 flex-col-reverse">
+                    <span id="read-more" class="text-sm font-bold text-blue-600">
+                        LER HISTÓRIA
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card sm:w-280px">
+            <img class="carousel-image"
+                src="https://a.slack-edge.com/80588/marketing/img/stories/lyft/slack-customer-lyft.jpg" alt="">
+            <div class="flex flex-col justify-start items-start h-340px sm:h-auto bg-white p-8">
+                <img src="https://a.slack-edge.com/80588/marketing/img/stories/lyft/lyft.png" alt="">
+                <span class="mt-4 pr-12 select-none italic">
+                    "Quando você é responsável por três grandes centros de operações em um país, o e-mail não é a melhor ferramenta de comunicação, porque não é rápido o suficiente. Ao nos reunirmos nos canais do Slack, podemos conversar sobre assuntos de gestão cotidianos de modo fácil. Isso não tem preço."
+                </span>
+                <span class="font-bold mt-4 text-sm">
+                    Benjamin Sternsmith
+                </span>
+                <span class="text-sm mt">
+                    Vice-presidente regional de Vendas, Lyft Business
+                </span>
+                <div class="flex flex-1 self-end sm:self-center sm:mt-8 flex-col-reverse">
+                    <span id="read-more" class="text-sm font-bold text-blue-600">
+                        LER HISTÓRIA
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card sm:w-280px">
+            <img class="carousel-image"
+                src="https://a.slack-edge.com/80588/marketing/img/stories/shopify/slack-customer-shopify.jpg" alt="">
+            <div class="flex flex-col justify-start items-start h-340px sm:h-auto bg-white p-8">
+                <img src="https://a.slack-edge.com/80588/marketing/img/stories/shopify/shopify.png" alt="">
+                <span class="mt-4 pr-12 select-none italic">
+                    "O Slack existe e é uma ferramenta essencial, ele realmente nos ajuda no dimensionamento e ainda nos faz sentir conectados uns aos outros em equipes e escritórios remotos."
+                </span>
+                <span class="font-bold mt-4 text-sm">
+                    Lisa Madokoro
+                </span>
+                <span class="text-sm mt">
+                    Especialista em Cultura, Shopify
+                </span>
+                <div class="flex flex-1 self-end sm:self-center sm:mt-8 flex-col-reverse">
+                    <span id="read-more" class="text-sm font-bold text-blue-600">
+                        LER HISTÓRIA
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="button-prev sm:hidden" (click)="movePrev()"></div>
+        <div class="button-next sm:hidden" (click)="moveNext()"></div>
+    </div>
+</div>
+<div class="flex items-center justify-center mt-8">
+    <div (click)="goTo(0)" class="rounded-full cursor-pointer m-2 h-4 w-4 bg-gray-400" [ngClass]="{'bg-button': activeCard === 0}"></div>
+    <div (click)="goTo(1)" class="rounded-full cursor-pointer m-2 h-4 w-4 bg-gray-400" [ngClass]="{'bg-button': activeCard === 1}"></div>
+    <div (click)="goTo(2)" class="rounded-full cursor-pointer m-2 h-4 w-4 bg-gray-400" [ngClass]="{'bg-button': activeCard === 2}"></div>
+    <div (click)="goTo(3)" class="rounded-full cursor-pointer m-2 h-4 w-4 bg-gray-400" [ngClass]="{'bg-button': activeCard === 3}"></div>
+</div>
