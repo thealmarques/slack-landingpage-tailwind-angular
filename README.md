@@ -1,27 +1,34 @@
-# SlackLandingPage
+# Slack Landing Page @angular8 @tailwind @hammerjs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
+## Desktop Demo
 
-## Development server
+<img src="resources/desktop.gif" height="50%" width="80%"/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Mobile Demo
 
-## Code scaffolding
+<img src="resources/mobile.gif" height="50%" width="50%"/>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+Run this command to install all dependencies of the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install
+```
 
-## Running unit tests
+## Run
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute this command to start the server
 
-## Running end-to-end tests
+```bash
+npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Main Components
+
+* **Navbar with sidemenu for mobile devices**
+* **Modal that runs over the page content**
+* **Animated Carousel with draggable features**
